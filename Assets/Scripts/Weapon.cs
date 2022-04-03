@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Weapon : MonoBehaviour
 {
+    public static event Action<int> DecreaseHealth = delegate(int amount) {  };
     public Transform firePoint;
 
     public GameObject bulletPrefab;
@@ -55,6 +56,7 @@ public class Weapon : MonoBehaviour
         }
         anim.SetTrigger("shoot");
         //bullet.transform.Rotate(Vector3.up * randomVal);
+        DecreaseHealth(1);
         Invoke(nameof(EnableWeapon), 0.1f);
         if (shootSound != null)
         {

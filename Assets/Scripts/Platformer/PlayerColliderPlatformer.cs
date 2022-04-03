@@ -49,7 +49,7 @@ namespace Platformer
             //other.gameObject.transform.parent.GetComponent<EnemyBase>().KillEnemy();
         }
 
-        private void HandleDeath()
+        public void HandleDeath()
         {
             if (deathParticle != null)
             {

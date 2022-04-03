@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         PlayerColliderPlatformer.PlayClip += PlayAudioClip;
         PlayerColliderPlatformer.LevelFinished += OnLevelFinished;
         Movement.DecreaseHealth += DecreaseHealth;
+        Weapon.DecreaseHealth += DecreaseHealth;
         Movement.PlayClip += PlayAudioClip;
     }
 
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         PlayerColliderPlatformer.AddHealth -= AddHealth;
         PlayerColliderPlatformer.PlayClip -= PlayAudioClip;
         PlayerColliderPlatformer.LevelFinished -= OnLevelFinished;
+        Weapon.DecreaseHealth -= DecreaseHealth;
         Movement.DecreaseHealth -= DecreaseHealth;
         Movement.PlayClip -= PlayAudioClip;
         
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        healthText.text = currentHealth.ToString();
+        healthText.text = "Health:" + currentHealth.ToString();
         healthPercentImage.fillAmount = (float)currentHealth / 100;
     }
 
@@ -107,7 +109,8 @@ public class GameManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            RestartCurrentLevel();
+            FindObjectOfType<PlayerColliderPlatformer>().HandleDeath();
+            //RestartCurrentLevel();
         }
         UpdateUI();
     }
@@ -148,14 +151,18 @@ public class GameManager : MonoBehaviour
 
     public void RestartCurrentLevel()
     {
+        Invoke(nameof(RestartLevel), 2);
+    }
+
+    public void RestartLevel()
+    {
         // Some Fancy effects would be nice 
         fader.gameObject.SetActive(true);
         LeanTween.scale(fader, Vector3.zero, 0f);
         LeanTween.scale(fader, new Vector3(3,3,3), 1f).setEaseInOutQuad() .setOnComplete(() =>
         {
             Invoke(nameof(ReloadCurrentLevel), 2);
-        });
-        
+        }); 
     }
 
     public void ReloadCurrentLevel()
