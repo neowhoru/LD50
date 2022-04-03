@@ -343,7 +343,7 @@ Transform:
   m_Father: {fileID: 1575906330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &882254993
+--- !u!43 &373632063
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38692,8 +38692,8 @@ MonoBehaviour:
   - {x: 94, y: 29, z: 0}
   - {x: -64, y: 29, z: 0}
   m_ShapePathHash: 0
-  m_Mesh: {fileID: 882254993}
-  m_InstanceId: 180630
+  m_Mesh: {fileID: 373632063}
+  m_InstanceId: 50202
 --- !u!1 &1531222996
 GameObject:
   m_ObjectHideFlags: 0
@@ -38759,8 +38759,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 6
-  m_fontSizeBase: 6
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -38795,7 +38795,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.23851585, w: 0}
+  m_margin: {x: 0, y: 0, z: 0.07358837, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -38861,8 +38861,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.848806, y: 6.61}
-  m_SizeDelta: {x: 17.3805, y: 5.2269}
+  m_AnchoredPosition: {x: -9.8503, y: 4.38}
+  m_SizeDelta: {x: 15.8437, y: 1.2795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1575906329
 GameObject:
@@ -39032,7 +39032,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Climb & Jump reduce your health to.
+  m_text: Climb, Jump and shooting reduce your health to.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f72738a54301ff4482360e612b8a140, type: 2}
   m_sharedMaterial: {fileID: 6388057158060858383, guid: 1f72738a54301ff4482360e612b8a140, type: 2}
@@ -39161,8 +39161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.85, y: 15.86}
-  m_SizeDelta: {x: 17.3805, y: 5.2269}
+  m_AnchoredPosition: {x: 11.817404, y: 14.61}
+  m_SizeDelta: {x: 29.8752, y: 5.2269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2321045142432058333
 PrefabInstance:
@@ -39226,6 +39226,22 @@ PrefabInstance:
     - target: {fileID: 1540781419207873595, guid: bc38cf86f845ed64d9eaf8a5dad3606a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414292016334870463, guid: bc38cf86f845ed64d9eaf8a5dad3606a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4899998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414292016334870463, guid: bc38cf86f845ed64d9eaf8a5dad3606a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3679996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414292016334870463, guid: bc38cf86f845ed64d9eaf8a5dad3606a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.06285572
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414292016334870463, guid: bc38cf86f845ed64d9eaf8a5dad3606a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5732719
       objectReference: {fileID: 0}
     - target: {fileID: 7658841706576048597, guid: bc38cf86f845ed64d9eaf8a5dad3606a, type: 3}
       propertyPath: m_Name

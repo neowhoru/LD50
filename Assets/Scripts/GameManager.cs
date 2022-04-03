@@ -15,12 +15,15 @@ public class GameManager : MonoBehaviour
     // Ui stuff
     public Text healthText;
     public Image healthPercentImage;
+
+    public Animator helpPanelAnimator;
     
     [SerializeField] private RectTransform fader;
 
     private PlayerAudioManager _audioManager;
     void Start()
     {
+        UpdateUI();
         _audioManager = GetComponent<PlayerAudioManager>();
         fader.gameObject.SetActive(true);
         LeanTween.scale(fader, new Vector3(3,3,3), 0f);
@@ -29,7 +32,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Fader finished");
             fader.gameObject.SetActive(false);
             InitDecreaseHealthTimer();
-            UpdateUI();
+            Invoke(nameof(DisableHelpPanel), 5);
         });
         
         
@@ -38,6 +41,11 @@ public class GameManager : MonoBehaviour
     private void InitDecreaseHealthTimer()
     {
         InvokeRepeating(nameof(DecreaseHealthByTimer), 1f, 1f);
+    }
+
+    public void DisableHelpPanel()
+    {
+        helpPanelAnimator.SetBool("FadeOut",true);
     }
 
     public void OnEnable()
